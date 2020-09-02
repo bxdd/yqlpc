@@ -1,0 +1,18 @@
+<!--miniprogram/pages/personalCollection.wxml-->
+<view class="container">
+  <view id='top-bar'>
+    <view class='top-title'>
+      历史记录
+    </view>
+  </view>
+<courseSearchResult
+  style='width:100%;'
+  id='searchResult'
+  courseSearchList="{{courseList}}"
+  bind:getDriverCourse="_getDriverCourse"
+  bind:getPassengerCourse="_getPassengerCourse"
+  bind:bindSetSortTag="_bindSetSortTag">
+  >
+
+</courseSearchResult>
+</view>

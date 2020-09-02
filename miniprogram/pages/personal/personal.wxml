@@ -1,0 +1,29 @@
+<view class='container'>
+  <view id='top-bar'>
+    <view class='top-title'>
+      个人信息
+    </view>
+  </view>
+  <view class='userinfo-wrapper'>
+    <open-data class="userinfo-avatar" type="userAvatarUrl"></open-data>
+    <open-data class="userinfo-nickname" type="userNickName" lang="zh_CN"></open-data>
+  
+  </view>
+  
+  <!-- 功能列表 -->
+  <view class='my-items'>
+    <view bindtap='bindGetMyCollection' class='item-wrapper'>
+      <view>
+        我的收藏
+      </view>
+      
+      <label>></label>
+    </view>
+    <view bindtap='bindGetMyCoursePage' class='item-wrapper'>
+      <view>
+        历史记录
+      </view>
+      <label>></label>
+    </view>
+  </view>
+</view>

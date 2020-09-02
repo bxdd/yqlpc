@@ -1,0 +1,23 @@
+#top-bar {
+  width: 90%;
+  height: 40rpx;
+  padding: 10rpx 40rpx;
+  font-size: 28rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: #fff;
+  border-radius: 10rpx;
+  border: solid 2rpx black;
+  background-color: #c86464;
+}
+.top-title{
+  font-size: 32rpx; 
+  font-weight: bold; 
+  line-height: 32rpx;
+  color: #fff;
+}
+#top-bar view {
+  flex: 1;
+  justify-content: left;
+}

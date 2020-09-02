@@ -1,0 +1,57 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/personal/personal",
+    "pages/publish/publish",
+    "pages/courseDetail/courseDetail",
+    "pages/courseSearch/courseSearchByLoc",
+    "pages/myCollection/myCollection",
+    "pages/myCourse/myCourse",
+    "pages/myOrder/myOrder"
+  ],
+  "window": {
+    "backgroundColor": "#7A7A7A",
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "一起来拼车",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "backgroundColor": "#B4D78F",
+    "selectedColor": "#c86464",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "附近",
+        "iconPath": "images/local.png",
+        "selectedIconPath": "images/local-selected.png"
+      },
+      {
+        "pagePath": "pages/courseSearch/courseSearchByLoc",
+        "text": "搜索",
+        "iconPath": "images/search.png",
+        "selectedIconPath": "images/search-selected.png"
+      },
+      {
+        "pagePath": "pages/publish/publish",
+        "text": "发布",
+        "iconPath": "images/publish.png",
+        "selectedIconPath": "images/publish-selected.png"
+      },
+      {
+        "pagePath": "pages/myOrder/myOrder",
+        "text": "订单",
+        "iconPath": "images/ding.png",
+        "selectedIconPath": "images/ding-selected.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "我的",
+        "iconPath": "images/my.png",
+        "selectedIconPath": "images/my-selected.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,32 @@
+<!-- <map id="myMap" 
+  latitude="{{latitude}}" 
+  longitude="{{longitude}}" 
+  markers="{{markers}}"
+  subkey="H6HBZ-T5LCV-CXFPA-UAJJR-UDJTE-5EB3X"
+  show-location
+  >
+
+</map> -->
+
+
+<view class="container">
+  <view id='top-bar'>
+    <view class='top-title'>
+      我的订单
+    </view>
+  </view>
+  <view class='menu-bar'>
+    <view class='switch-btn-wrapper' style='width:380rpx;margin-left: 170rpx;'>
+      <label class='cur-menu' bindtap='_setPassengerCourse' wx:if="{{showType == 0}}">我是乘客</label>
+      <label bindtap='_setPassengerCourse' wx:else>我是乘客</label>
+      <label class='cur-menu' bindtap='_setDriverCourse' wx:if="{{showType == 1}}">我是司机</label>
+      <label bindtap='_setDriverCourse' wx:else>我是司机</label>
+    </view>
+  </view>
+  <view wx:if="{{msgList.length > 0}}" style="width:100%" >
+    <view wx:key="{{item._id}}" wx:for="{{msgList}}" wx:for-item="item">
+    <orderCard courseObj='{{item}}' showType="{{showType}}" bind:bindOrderPay="_bindOrderPay">
+    </orderCard>
+    </view>
+  </view>
+</view>

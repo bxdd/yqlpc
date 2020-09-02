@@ -1,0 +1,44 @@
+<!--pages/components/courseCard.wxml-->
+<view class='msg-card' data-courseObj='{{courseObj}}' data-showType='{{showType}}'>
+    <view class='topinfo'>
+      <label class='topinfo-pay' wx:if="{{courseObj.flag_pay == 0}}">
+        <label bindtap='_bindPay' data-orderid="{{courseObj.orderId}}" wx:if="{{showType == 0}}">
+          点击支付
+        </label>
+        <label wx:else>
+          未到账
+        </label>
+      </label>
+      <label class='topinfo-pay' wx:else>
+        <label wx:if="{{showType == 0}}">
+          已支付
+        </label>
+        <label wx:else>
+          已到账
+        </label>
+      </label>
+      <label class='topinfo-price'>{{courseObj.price}} 元</label>
+      <label class='topinfo-time'>出发 {{courseObj.date}} {{courseObj.time}}</label>
+      
+      
+    </view>
+    <view>
+      <view class='main-info'>
+        <view class='address-wrapper'>
+          <view style='margin-left:10rpx'>
+            <view class='start-address' style='margin-left:15px;'>
+              <view class='adress-flag-start'> 起点 </view>
+              <view class='address-title'>{{courseObj.startAddressInfo.name}}</view>
+              <view class='address-detail'>{{courseObj.start}}</view>
+            </view>
+            <view class='end-address' style='margin-left:15px;'>
+              <view class='adress-flag-end'> 终点 </view>
+              <view class='address-title'>{{courseObj.endAddressInfo.name}}</view>
+              <view class='address-detail'>{{courseObj.end}}</view>
+            </view>
+          </view>        
+        </view>
+      </view>
+    </view>
+  </view>
+

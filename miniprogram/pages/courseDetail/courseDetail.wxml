@@ -1,0 +1,100 @@
+<!--miniprogram/pages/courseDetail/courseDetail.wxml-->
+<view class='container' style='width:100%;height:100%'>
+  <view id='top-bar'>
+    <view class='top-title'>
+      附近
+    </view>
+  </view>
+
+<view class='msg-wrapper'>
+  <view class='topinfo'>
+    <image class="topinfo-avatar" src='{{courseInfo.avatarUrl}}'></image>
+    <label wx:if="{{showType == 1}}" class="topinfo-car">
+      {{courseInfo.carNum}}  {{courseInfo.carInfo}}
+    </label>
+    <label class='topinfo-time'>出发 {{courseInfo.date}} {{courseInfo.time}}</label>
+  </view>
+  
+  <!-- 个人信息 -->
+
+  <!-- 拼车信息 -->
+  <view class='pinche-info'>
+    <!-- 行程时间 -->
+
+
+    <!-- 起终点 -->
+    <view class='address-wrapper'>
+      <view style='margin-left:10rpx'>
+        <view class='start-address' style='margin-left:15px;'>
+          <view class='adress-flag-start'> 起点 </view>
+          <view class='address-title'>{{courseInfo.startAddressInfo.name}}</view>
+          <view class='address-detail'>{{courseInfo.start}}</view>
+        </view>
+        <view class='end-address' style='margin-left:15px;'>
+          <view class='adress-flag-end'> 终点 </view>
+          <view class='address-title'>{{courseInfo.endAddressInfo.name}}</view>
+          <view class='address-detail'>{{courseInfo.end}}</view>
+        </view>
+      </view>        
+    </view>
+    <view class='mapinfo'>
+      <map id="myMap" 
+      latitude="{{latitude}}" 
+      longitude="{{longitude}}" 
+      markers="{{markers}}"
+      subkey="H6HBZ-T5LCV-CXFPA-UAJJR-UDJTE-5EB3X"
+      polyline="{{polyline}}"
+      include-points="{{includePoints}}"
+      >
+      </map>
+    </view>
+    <view class='num-wrapper' style='margin-top:30rpx' >
+        <view wx:if="{{showType == 0}}">
+          人数:{{courseInfo.personNum}}
+        </view>
+        <view wx:else>
+          余座:{{courseInfo.surplusSeat}}
+        </view>
+    </view>
+
+    <view class='price-wrapper'>
+        <view wx:if="{{showType == 0}}">
+          报酬/人:{{courseInfo.price}}
+        </view>
+        <view wx:else>
+          价格/人:{{courseInfo.price}}
+        </view>
+        
+    </view>
+    <view class='kind-wrapper'>
+        <view wx:if="{{showType == 0}}">
+          需要的拼车类型:{{passenger_type[courseInfo.needDriverType]}}
+        </view>
+        <view wx:else>
+          提供的拼车类型:{{driver_type[courseInfo.needPassengerType]}}
+        </view>
+        
+      </view>
+
+  
+    <view class='item-wrapper' style='margin-top:30rpx;height:80px;font-size:28rpx;'>
+      <label style='width:100rpx;'>备注:</label>
+      <textarea value='{{courseInfo.note}}' style='height:180rpx;margin-left:30rpx;'></textarea>
+    </view>
+</view>
+</view>
+<view class='btn-group'>
+  <label class = 'collectBtn' wx:if="{{isCollected}}">
+    已收藏
+  </label>
+  <label class = 'collectBtn' wx:else bindtap='bindCollectCourse' id='starBtn'>收藏</label>
+  <label id='callBtn' bindtap='bindCallPhone' data-phone='{{courseInfo.phone}}'>联系TA</label>
+  <label class = 'buyButton' wx:if="{{isBuy}}">
+    已生成订单
+  </label>
+  <label class='buyButton' bindtap='bindMakeOrder' wx:else>生成订单</label>
+</view>
+</view>
+
+<!-- 
+<map id="myMap" longitude="113.324520" latitude="23.099994" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location style="width: 100%; height: 300px;"></map> -->

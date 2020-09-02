@@ -1,0 +1,144 @@
+<!-- <map id="myMap" 
+  latitude="{{latitude}}" 
+  longitude="{{longitude}}" 
+  markers="{{markers}}"
+  subkey="H6HBZ-T5LCV-CXFPA-UAJJR-UDJTE-5EB3X"
+  show-location
+  >
+
+</map> -->
+
+
+<view class="container">
+  <view id='top-bar'>
+    <view class='top-title'>
+      发布
+    </view>
+  </view>
+  <view class='menu-bar'>
+    <view class='switch-btn-wrapper' style='width:380rpx;margin-left: 170rpx;'>
+      <label class='cur-menu' bindtap='_setPassengerCourse' wx:if="{{showType == 0}}">我是乘客</label>
+      <label bindtap='_setPassengerCourse' wx:else>我是乘客</label>
+      <label class='cur-menu' bindtap='_setDriverCourse' wx:if="{{showType == 1}}">我是司机</label>
+      <label bindtap='_setDriverCourse' wx:else>我是司机</label>
+    </view>
+  </view>
+  <view id='msgWrapper'>
+    <form bindsubmit="formSubmit">
+        <view class="form-topbar" wx:if="{{showType == 0}}">
+
+          <picker name="needDriverType" bindchange="bindPassengerChange" value='{{passenger_index}}' mode="selector" range="{{passenger_type}}" style='text-align: center;margin:auto;'>
+            <view wx:if="{{passenger_index == -1}}">
+                点击选择需要的拼车类型
+            </view>
+            <view wx:else> 
+              拼车类型: {{passenger_type[passenger_index]}}
+            </view>
+          </picker>
+        </view>
+        <view class="form-topbar" wx:else>
+          <picker name="needPassengerType" bindchange="bindDriverChange" value='{{driver_index}}' mode="selector" range="{{dirver_type}}" style='text-align: center;margin:auto;'>
+            <view class="picker" wx:if="{{driver_index == -1}}">
+                点击选择提供的拼车类型
+            </view>
+            <view class="picker" wx:else> 
+              拼车类型: {{dirver_type[driver_index]}}
+            </view>
+          </picker>
+        </view>
+      <view class='address-wrapper'>
+        <view class="half-input-wrapper">
+          <label class='start-icon'>起</label>
+          <input bindfocus='bindSelectStart' class='point-input' id='start' name="start" value='{{startAddressInfo.address}}' placeholder='点击选择起点'/>
+        </view>
+        <view class="half-input-wrapper">
+          <label class='end-icon'>终</label>
+          <input bindfocus='bindSelectEnd' class='point-input' id='end' name="end" value='{{endAddressInfo.address}}' placeholder='点击选择终点'/>
+        </view>
+      </view>
+      <!-- 车辆信息 -->
+      <view class='input-area' wx:if="{{showType == 1}}">
+        <view class="input-wrapper">
+          <label>车辆型号和颜色:</label>
+          <input name="carInfo" class='carInfo' placeholder='型号 颜色'></input>  
+        </view>
+        <view class="input-wrapper">
+          <label>车牌号:</label>
+          <input name="carNum" placeholder='请输入车牌号'></input>  
+        </view>
+      </view>
+
+      <!-- 人数价格 -->
+      <view class='input-area'>
+        <view class="input-wrapper" wx:if="{{showType == 0}}">
+          <label>人数:</label>
+          <picker name="personNum" bindchange="bindNumChange" value='{{index}}' mode="selector" range="{{searRange}}" style='height:35px;flex: 1; text-align: right;padding-right: 20rpx;'>
+            <view class="picker" wx:if="{{index == -1}}">
+              请选择 >
+            </view>
+            <view class="picker" wx:else> 
+              {{searRange[index]}}
+            </view>
+          </picker>
+        </view>
+        <view class="input-wrapper" wx:else>
+          <label>空余座位:</label>
+          <picker name="surplusSeat" bindchange="bindNumChange" value='{{index}}' mode="selector" range="{{searRange}}" style='height:35px;flex: 1; text-align: right;padding-right: 20rpx;'>
+            <view class="picker" wx:if="{{index == -1}}">
+              请选择 >
+            </view>
+            <view class="picker" wx:else> 
+              {{searRange[index]}}
+            </view>
+          </picker>
+        </view>
+        <view class="input-wrapper">
+            <view wx:if="{{showType == 0}}">
+              <label>行程单价/人:</label>
+            </view>
+            <view wx:else>
+              <label>给出的报酬/人:</label>
+            </view>
+            <input style='height:35px;flex: 1; text-align: right;padding-right: 20rpx;' type='number' name="price" placeholder='点击输入'/>
+        </view>  
+      </view>
+
+    <view class='input-area'>
+      <view class="input-wrapper" id="datetimeWrapper">     
+        <view id='date' class='datetime'>
+          <!-- 日期 -->
+          <label style='display:inline-block'>出发日期:</label>
+          <picker name="date" mode="date" value="{{date}}" start="2018-09-01" end="" bindchange="bindDateChange">
+            <view class="picker" wx:if="{{date == ''}}">
+              请选择 >
+            </view>
+            <view class="picker" wx:else> 
+              {{date}}
+            </view>
+          </picker>
+        </view>
+        <view id='time' class='datetime'>
+          <!-- 时间 -->
+          <label style='display:inline-block'>出发时间:</label>
+          <picker name="time" mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
+            <view class="picker" wx:if="{{time == ''}}">
+              请选择 >
+            </view>
+            <view class="picker" wx:else> 
+              {{time}}
+            </view>
+          </picker> 
+        </view>
+      </view>
+      <view class="input-wrapper">
+        <input style='height:35px;' type='number' name="phone" placeholder='请输入电话'/>
+      </view>  
+    </view>
+
+    <view class="textarea-wrp">
+      <textarea class='note' name="note" style='height: 3em;' placeholder='请输入备注信息(必填)' placeholder-style='font-size: 12px;'></textarea>
+    </view>
+    <button form-type="submit" class='publish-btn' bindtap="driverMsgAdd">发布</button>
+    </form>
+  </view>
+</view>

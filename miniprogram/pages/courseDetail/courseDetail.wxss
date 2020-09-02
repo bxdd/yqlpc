@@ -1,0 +1,230 @@
+/**index.wxss**/
+
+page {
+  height: 100%;
+  background: #A3C4F5;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#top-bar {
+  width: 90%;
+  height: 40rpx;
+  padding: 10rpx 40rpx;
+  font-size: 28rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: #fff;
+  border-radius: 10rpx;
+  border: solid 2rpx black;
+  background-color: #c86464;
+}
+.top-title{
+  font-size: 32rpx; 
+  font-weight: bold; 
+  line-height: 32rpx;
+  color: #fff;
+}
+#top-bar view {
+  flex: 1;
+  justify-content: left;
+}
+
+#myMap {
+  width: 95%;
+  height: 90%;
+  margin: 20rpx auto 20rpx auto;
+}
+.mapinfo{
+  width: 90%;
+  height: 400rpx;
+  margin: auto;
+  border: solid 2rpx black;
+  border-radius: 10rpx;
+  background: #00b26a;
+}
+.msg-wrapper {
+  width: 94%;
+  height: auto;
+  margin: 50rpx auto;
+  flex: 1;
+  width: 95%;
+  font-size: 32rpx;
+  padding-top: 8rpx;
+  background-color: #33CCFF;
+  border-radius: 10rpx;
+  border: solid 3rpx black;
+}
+
+.item-wrapper {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  height: 90rpx;
+  line-height: 90rpx;
+  border-radius: 10rpx;
+  border: solid 3rpx black;
+  background: rgb(200, 100, 100);
+}
+.kind-wrapper, .num-wrapper, .price-wrapper {
+  width: 90%;
+  margin: auto;
+  height: 60rpx;
+  background: #A3C4F5;
+  border-radius: 10rpx;
+  border: solid 3rpx black;
+  font-weight: 600;
+}
+
+
+.price-num {
+  display: flex;
+  text-align: right;
+  flex-direction: column;
+  height: 160rpx;
+  width: 20%;
+  padding-right: 20rpx;
+}
+.main-info {
+  display: flex;
+  flex-direction: row;
+}
+.price-info {
+  font-size: 40rpx;
+  font-weight: bold;
+}
+
+.end-address {
+  margin-top: 16rpx;
+}
+.btn-group{
+  display: flex;
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 32rpx;
+  border-top: 1rpx solid #ececec; 
+  text-align: center;
+}
+.btn-group label{
+  flex: 1;
+  background-color: #fff;
+}
+.collectBtn {
+  border: 2rpx solid black;
+  border-radius: 10rpx;
+}
+#callBtn {
+  color: #FFFFFF;
+  background-color: #00b26a !important;
+  border: 2rpx solid black;
+  border-radius: 10rpx;
+}
+.buyButton{
+  background-color: yellow !important;
+  border: 2rpx solid black;
+  border-radius: 10rpx;
+}
+i {
+  margin-right: 20rpx;
+  font-size: 26rpx;
+}
+
+.address-detail {
+  padding: 10rpx 0;
+  font-size: 24rpx;
+  color: #595959;
+}
+.address-wrapper {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  border: solid 3rpx black;
+  border-radius: 10rpx;
+  background: rgb(255, 242, 215);
+  margin: auto;
+
+}
+.adress-flag-start {
+  position: absolute;
+  margin-top:  10rpx;
+  margin-left: -65rpx;
+  border: solid 3rpx;
+  border: solid 3rpx black;
+  border-radius: 10rpx;
+  background: rgb(100, 200, 100);
+  color: #FFFFFF;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-weight: 600;
+  font-size: x-small;
+}
+.adress-flag-end {
+  position: absolute;
+  margin-top:  10rpx;
+  margin-left: -65rpx;
+  border: solid 3rpx;
+  border: solid 3rpx black;
+  border-radius: 10rpx;
+  background: rgb(200, 100, 100);
+  color: #FFFFFF;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-weight: 600;
+  font-size: x-small;
+}
+
+.topinfo {
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+}
+.topinfo-avatar {
+  position: absolute;
+  margin-left: 580rpx;
+  margin-top: -30rpx;
+  width: 70rpx;
+  height: 70rpx;
+  border: solid 3rpx;
+  border-radius: 10rpx;
+
+}
+
+.topinfo-car {
+  position: absolute;
+  margin-top: -30rpx;
+  margin-left: 360rpx;
+  height: 70rpx;
+  border: solid 3rpx black;
+  border-radius: 10rpx;
+  background: rgb(100, 200, 200);
+  color: #FFFFFF;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-weight: 600;
+  font-size: small;
+}
+
+.topinfo-time {
+  position: absolute;
+  margin-top: -30rpx;
+  margin-left: 20rpx;
+  height: 70rpx;
+  border: solid 3rpx;
+  border: solid 3rpx black;
+  border-radius: 10rpx;
+  background: rgb(200, 100, 100);
+  color: #FFFFFF;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-weight: 600;
+  font-size: small;
+}

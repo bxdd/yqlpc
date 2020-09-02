@@ -1,0 +1,24 @@
+<!-- 车主&乘客 -->
+<view class='menu-bar'>
+  <view class='switch-btn-wrapper' style='width:380rpx;'>
+    <label class='cur-menu' bindtap='_getPassengerCourse' wx:if="{{showType == 0}}">查询乘客</label>
+    <label bindtap='_getPassengerCourse' wx:else>查询乘客</label>
+    <label class='cur-menu' bindtap='_getDriverCourse' wx:if="{{showType == 1}}">查询顺风车</label>
+    <label bindtap='_getDriverCourse' wx:else>查询顺风车</label>
+  </view>
+  <view class='switch-btn-wrapper' style='width:180rpx;'>
+    <label class='cur-menu' bindtap='_bindSetSortTag' data-sorttag="{{0}}" wx:if="{{sortTag == 0}}">时间</label>
+    <label  bindtap='_bindSetSortTag' data-sorttag="{{0}}" wx:else>时间</label>
+    <label class='cur-menu' bindtap='_bindSetSortTag' data-sorttag="{{1}}" wx:if="{{sortTag == 1}}">距离</label>
+    <label  bindtap='_bindSetSortTag' data-sorttag="{{1}}" wx:else>距离</label>
+  </view>
+</view>
+<!-- 搜索结果 -->
+<view wx:if="{{courseSearchList.length > 0}}">
+  <!-- 行程card组件 -->
+  <courseCard id='courseCard' wx:for="{{courseSearchList}}" wx:for-index="idx" wx:for-item="item" courseObj='{{item}}' showType="{{showType}}">
+  </courseCard>
+</view>
+<view style='width:100%;text-align:center;font-size:28rpx;margin-top:300rpx;' wx:else>
+  暂无数据~
+</view>
