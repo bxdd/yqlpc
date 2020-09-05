@@ -1,6 +1,6 @@
 {
   "enablePullDownRefresh": true,
   "usingComponents": {
-    "courseCard": "../components/courseCard"
+    "courseCard": "../components/infoCard"
   }
 }

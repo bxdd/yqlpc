@@ -1,6 +1,6 @@
 {
-	"miniprogramRoot": "miniprogram/",
-	"cloudfunctionRoot": "cloudfunctions/",
+	"miniprogramRoot": "client/",
+	"cloudfunctionRoot": "server/",
 	"setting": {
 		"urlCheck": true,
 		"es6": true,
@@ -25,7 +25,7 @@
 			"outputPath": ""
 		},
 		"useIsolateContext": true,
-		"useCompilerModule": false,
+		"useCompilerModule": true,
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"appid": "wxf298120a31039d7e",

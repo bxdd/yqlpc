@@ -3,8 +3,8 @@
     "pages/index/index",
     "pages/personal/personal",
     "pages/publish/publish",
-    "pages/courseDetail/courseDetail",
-    "pages/courseSearch/courseSearchByLoc",
+    "pages/detail/detail",
+    "pages/search/search",
     "pages/myCollection/myCollection",
     "pages/myCourse/myCourse",
     "pages/myOrder/myOrder"
@@ -28,7 +28,7 @@
         "selectedIconPath": "images/local-selected.png"
       },
       {
-        "pagePath": "pages/courseSearch/courseSearchByLoc",
+        "pagePath": "pages/search/search",
         "text": "搜索",
         "iconPath": "images/search.png",
         "selectedIconPath": "images/search-selected.png"

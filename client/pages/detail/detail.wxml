@@ -93,7 +93,7 @@
     已生成订单
   </label>
   <label class='buyButton' bindtap='bindMakeOrder' wx:else>生成订单</label>
-</view>
+</view>i
 </view>
 
 <!-- 

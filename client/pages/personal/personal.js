@@ -105,10 +105,4 @@ Page({
     })
   },
 
-  bindGoAboutUs: function () {
-    wx.navigateTo({
-      url: '../aboutUs/aboutUs'
-    })
-  }
-
 })

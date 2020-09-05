@@ -34,7 +34,7 @@ Component({
       let courseObj = e.currentTarget.dataset.courseobj
       console.log(e.currentTarget.dataset.courseobj)
       wx.navigateTo({
-        url: '../courseDetail/courseDetail?course=' + JSON.stringify(courseObj) + '&showType=' + this.data.showType
+        url: '../detail/detail?course=' + JSON.stringify(courseObj) + '&showType=' + this.data.showType
       })
     }
   }
